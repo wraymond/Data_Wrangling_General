@@ -1,0 +1,44 @@
+---
+title: "Class notes 9.4.18"
+author: "Wendel Raymond"
+date: "September 4, 2018"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# General discussion
+## Citing code and packages
+Open and upfront. Most all R packages have citation guidelines and/or a companion stand alone peer reviewed publications.
+
+Error on the side of caution. 
+
+## Data Management
+Assigning management duties can be helpful especially for large projects. 
+Also important to be upfront about authorship. But its a case-by-case thing.
+
+## Our case studies
+Refine goal and 1-2 clear objectives to reach that goal.
+Cover the What, Where, Why in goal statements
+Objectives should have specificity. Enough that another person could figure out how to address the objective without much help.
+
+# Franz's case study
+## The borealization of the Bering Sea
+**Goal** develop plausible scenarios for changes in the fish community on the northern Bering Sea as a result of changing ice conditions.
+*Objective 1* develop statistical models for predicting different aspect of sp. composition
+*Objective 2* forecast species composition in the N Bering Sea.
+
+Ice extent determines the bottom temperature in the following summer. That strongly influences species distributions.
+
+Reading original documentation is really important to consider to understand nuance to the data.
+
+Consider high or lower groupinf levels of data. Might make analyses easier later.
+
+Sometimes you might have missing values. You may be able to fill them in with a couple differnet methods. This really only works for missing explanatory data. Missing response data... you are kinda SOL. In genreal you can develop a model to estimate the value at its missing points. You can get tricky with using lat/long instead of station ID. Data may be spatially or temporally autocorreleated. For example bottom temperature = s(lat, log)sub t.
+
+biomod2 package can run a bunch of models with one set of inputs and it will evaluate their performance.
+
+### Building the global model
+some response ~ year, f(bottom temp), f(depth), f(lat, long), f(day)
+
+may be better to not include some variables because they may be confounded
