@@ -1,0 +1,51 @@
+---
+title: "Class notes 9.18.18"
+author: "Wendel Raymond"
+date: "September 18, 2018"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# General discussion
+## Next time
+No Franz. Curry and Wendel will lead an intro to git and GitHub.
+
+## Upcoming case studies
+Will send out updated schedual. Dates may change again.
+
+## Working gorups
+Keep it within sites. So I will work with Lorna and Kelly. 
+
+What we are supposed to do.
+1. what we are doing
+2. how are we doing it
+3. why are we doing it
+
+So three meetings outside of class to work on shit. At least. One meeting for each presons case study. Work together to understand whats happening and 
+
+# Case study recap
+## Lorna
+Size-selective mortality of chinook salmon.
+
+Assess evidence of size selective mortality of large fish a potential cause of Chinook salmon size declines in Alaska.
+
+Approach
+1. Calculate indices
+2. Adjust for known effects on growth including stock variability across stocks, brood years, temp, age at maturity
+3. Compare residuals among groups with known or presumed low and high predation.
+
+Model will be mixed effects model with zone age-at-maturity and SST as fixed effects and stock and year as random effects. 
+
+## Justin
+Prudhoe Bay fish community
+
+Assess changes in fish community in Prudhoe Bay ove the past 18 years relative to environmentla variability
+
+Approach
+1. nMDS to visualize differences / similarities among years
+2. Interpret the ordination axes (correlatoions with species abundances)
+3. Correlation with environmental variables (overlay vectors on ordination and test individually for significance) envfit() in vegan package
+4. Determine best sebset of envi variables that have the maximumcorrelation with community dissimilarities. bioenv() in vegan
+5. PERMANOVA to partition community dissimilarities among groups and along envi gradients. conduct permutation tests to assess significance of paritions. adonis() and adonis2() in vegan.
+6. Examine changes over time in selected indices... this is hard in multivariate world. 
