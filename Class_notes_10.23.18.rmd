@@ -1,0 +1,51 @@
+---
+title: "Class_notes_10.23.18"
+author: "Wendel Raymond"
+date: "October 23, 2018"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Relational databases
+Originaly created as a way to efficiently store large amounts of data. There are ways in R to access these databases.
+
+## Methods
+1) DBI ('DBI')
+2) dplyr ('dplyr', 'dbplyr')
+3) R Notebooks
+
+any of these approaches you must connect to an external database
+
+This opens a connection to a database
+```{r, eval=FALSE}
+con <- dbConnect(odbc::odbc(), dsn = "Source Name")
+```
+
+You can use dplyr syntax! With the connection as the first input to the chunck.
+
+RNotebooks can allow for SQL directly as a differnet code chunk.
+
+Can access MS Access via R too.
+
+# Some notes on multivariate analysis
+PERMANOVA! 'adonis()' and 'adonis2()'
+
+## Steps in Analysis
+1) Transformations and standardizations
+  + transformations changes the shape of the distribution
+  + strandardizations do not change the shape but scales the values to some level
+  + transformation to achive normality is NOT necessary for many/all multivariate analyses. It just depends on hte situation.
+  + Standarizations are almost alwayse a good idea
+2) Compute pairwise dissimilarities using an *appropriate* measure
+  + for sp composition data bary-curtis is the most appropriate becasue it can handle zeros
+  + euclidean is highly affected by zeros, as long as things are reasonably normal
+  + lost of other distance measures
+3) Ordination to visualize differences
+4) Interpret the ordination in terms of the data, e.g. species composition
+5) Relate the ordination to environmental variables
+  + envifit()
+  + Mantel test bioenv() in vegan
+
+
+
