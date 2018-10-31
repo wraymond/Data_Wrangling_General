@@ -1,0 +1,16 @@
+---
+title: "Class_notes_10.30.2018"
+author: "Wendel Raymond"
+date: "October 30, 2018"
+output: html_document
+---
+# Model selection and model averaging (multimodel inference)
+
+## Where did this come from?
+In the old days people tried to develop models based on therory and just assumed that that was it. That turned out to not be the best idea. Then people realized that you can get differnent answers based on the same data. So what is the best model? 
+
+Information criterion were developed to compare models in term of how well they fit by accounting for the number of paramters used. Sometimes there are many models that are pretty similar. There is uncertainty in what model is the correct model.
+
+Enter model averaging! We can use a set of good models to draw inference. You can put weight on differnet models based on objective criterion, like AICc etc.
+
+Multicolineararity can mess things up. So enter parameter standarization. 
