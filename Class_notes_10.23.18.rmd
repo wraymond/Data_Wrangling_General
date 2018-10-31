@@ -29,7 +29,7 @@ RNotebooks can allow for SQL directly as a differnet code chunk.
 Can access MS Access via R too.
 
 # Some notes on multivariate analysis
-PERMANOVA! 'adonis()' and 'adonis2()'
+PERMANOVA! `adonis()` and `adonis2()`
 
 ## Steps in Analysis
 1) Transformations and standardizations
@@ -38,14 +38,18 @@ PERMANOVA! 'adonis()' and 'adonis2()'
   + transformation to achive normality is NOT necessary for many/all multivariate analyses. It just depends on hte situation.
   + Standarizations are almost alwayse a good idea
 2) Compute pairwise dissimilarities using an *appropriate* measure
-  + for sp composition data bary-curtis is the most appropriate becasue it can handle zeros
-  + euclidean is highly affected by zeros, as long as things are reasonably normal
+  + for sp composition data bary-curtis dissimilarity is the most appropriate becasue it can handle zeros
+  + euclidean is highly affected by zeros. Use if are reasonably normal
   + lost of other distance measures
-3) Ordination to visualize differences
-4) Interpret the ordination in terms of the data, e.g. species composition
+3) Ordination to visualize differences. Like PCA or NMDS. 
+4) Interpret the ordination in terms of the data, e.g. species composition, sites, environmental data.
 5) Relate the ordination to environmental variables
   + envifit()
-  + Mantel test bioenv() in vegan
-
-
-
+  + Mantel test `bioenv()` in `vegan`
+  + correlate envi variables to biological variables. Could do with different subset of environmental variables
+6) PERMANOVA
+  + generalizes multivariate AN(C)OVA for non-normal responses. Can use *any* distance measure to partition within and between group dispersion
+  + with n-diemnsional data you compute the mean distances from the centroid rather than the mean like in a simple ANOVA setting. Test-stat is wilks lambda for MANOVA (multivariate normal)
+  + Non-normal data don't really have centroids, so we use the pairwise distances between all samples, which is the same as the sum of squared distances from the centroid (Huygens theorem). Hurray!
+  + PERMANOVA implements this! Thats why its a pseudo-F. Randomization to obtain dist. of p-F under null hypothesis. 
+  + one should test for homoskedasisity `betadisper()` in `R`
