@@ -1,0 +1,22 @@
+---
+title: "Class_notes_11.6.2018"
+author: "Wendel Raymond"
+date: "November 6, 2018"
+output: html_document
+---
+
+# Oceanographic data
+The `oce` package has a bunch of tools for dealing with oceanographic data and some other weather/climate data.
+
+# Morphometrics
+`geomorph` package
+
+# Cross-correlations for time series analysis
+`ccf()` the cross-correlations function
+
+In the case of long time series you may want to remove the seasonal effect. So compute anomolies.
+
+Somtimes you may not know what is causing the lag. Is a causing b or b causing a? This can be an issue when building predictive models
+
+# Cautionary tale
+Patterns and correlations do not necesarily mean anything
